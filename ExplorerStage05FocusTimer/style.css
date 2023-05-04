@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #FFFFFF;
+    --main-color: #323238;
+    --bg-card-on: #02799D;
+    --bg-card-off: #E1E1E6;
+    --bg-color-darkmode: #121214;
+    ;
+    --bg-color-darkmode-green: #0A3442;
+
+
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--main-color);
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+
+    display: grid;
+    min-height: 100vh;
+
+    transition: background 0.2s linear;
+}
+
+.sun {
+    cursor: pointer;
+}
+
+.moon {
+    display: none;
+}
+
+main {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+
+}
+
+.container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(5rem, 5rem + 8vw, 19.2rem);
+
+}
+
+.timer {
+    font-size: clamp(12.8rem, 12rem + 10vw, 12.6rem);
+
+
+}
+
+.time {
+    margin-bottom: 4.8rem;
+}
+
+
+button {
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.cards button {
+    width: 13.8rem;
+    height: 15.2rem;
+    background: var(--bg-card-off);
+    border-radius: 2.4rem;
+}
+
+.cards {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 3.2rem;
+}
+
+.cards div {
+    padding: 4.8rem;
+    border-radius: 2.4rem;
+    background-color: var(--bg-img);
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover {
+    background: #02799D;
+}
+
+.card1.selected {
+    background: #02799D;
+}
+
+.card2.selected {
+    background: #02799D;
+}
+
+.card3.selected {
+    background: #02799D;
+}
+
+.card4.selected {
+    background: #02799D;
+}
+
+@media (max-width: 910px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 10rem 2rem;
+        min-width: 360px;
+    }
+
+    .time {
+        font-size: 10rem;
+    }
+}
+
+label {
+    position: absolute;
+    left: 91.88%;
+    right: 4.69%;
+    top: 8.33%;
+    bottom: 85.56%;
+}
+
+input[type="checkbox"] {
+    display: none;
+
+}
+
+
+/* --- DARK THEME --- */
+
+.dark {
+    background-color: var(--bg-color-darkmode);
+    color: #FFFFFF;
+    transition: background 0.2s linear;
+}
+
+.dark .sun {
+    display: none;
+
+}
+
+.dark .moon {
+    display: block;
+    cursor: pointer;
+}
+
+
+
+.dark .card1 {
+    background: #29292E;
+}
+
+.dark .card2 {
+    background: #29292E;
+}
+
+.dark .card3 {
+    background: #29292E;
+}
+
+.dark .card4 {
+    background: #29292E;
+}
+
+.dark .card1:hover,
+.dark .card2:hover,
+.dark .card3:hover,
+.dark .card4:hover {
+    background-color: var(--bg-color-darkmode-green);
+}
+
+.dark .card1.selected {
+    background: var(--bg-color-darkmode-green);
+}
+
+.dark .card2.selected {
+    background: var(--bg-color-darkmode-green);
+}
+
+.dark .card3.selected.selected {
+    background: var(--bg-color-darkmode-green);
+}
+
+.dark .card4.selected {
+    background: var(--bg-color-darkmode-green);
+}
+
+.dark .play {
+    color: #C4C4CC;
+}
